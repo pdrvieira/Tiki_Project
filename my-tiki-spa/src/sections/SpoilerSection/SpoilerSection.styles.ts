@@ -7,7 +7,7 @@ export const StyledBox = styled.section`
   align-items: center;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -21,6 +21,14 @@ export const StyledSpoiler = styled.div`
     padding-top: 63px;
     padding-bottom: 97.96px;
     width: 100%; 
+`;
+
+export const StyledImages = styled.div`
+    display:block;
+    align-items: center;
+    text-align: center;
+    padding-top:69px;
+   
 `;
 
 

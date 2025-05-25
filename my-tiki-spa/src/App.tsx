@@ -5,8 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 // Seções
 import Header from './sections/Header/Header';
 import SpoilerSection from './sections/SpoilerSection/SpoilerSection';
-//import FormSection from './sections/FormSection/FormSection';
-//import Footer from './sections/Footer/Footer';
+import Footer from './sections/Footer/FooterSection';
 
 function App() {
   return (
@@ -14,6 +13,7 @@ function App() {
       <GlobalStyles />
       <Header />
       <SpoilerSection />
+      <Footer />
     </>
   );
 }

@@ -10,6 +10,7 @@ import { useState } from 'react';
 import SetaEsq from './SetaEsq';
 import SetaDir from './SetaDir';
 
+
 // Imagens
 const images = [
   { src: '/src/assets/imagem.jpg', alt: 'Image 1', label: '16 DE MARÇO', locked: false },
@@ -31,7 +32,8 @@ function Card() {
     arrows: true,
     prevArrow: <SetaEsq />,
     nextArrow: <SetaDir />,
-    centerMode: true,
+    centerMode: false,
+    initialSlide: 0,
     centerPadding: '0px',
     responsive: [
       {
@@ -70,8 +72,6 @@ function Card() {
             </a>
           </div>
         </div>
-
-
       </StyledEstado>
 
         <h2 style={{paddingBottom:15}}>CONFIRA O QUE JÁ SAIU E O QUE ESTÁ POR VIR!</h2>
@@ -79,34 +79,33 @@ function Card() {
       <StyledCardsContainer>
         <Slider {...settings}>
           {images.map((image, index) => (
-            <StyledCardWrapper key={index}>
+          <StyledCardWrapper key={index}>
+            <StyledThumb
+              onClick={() => !image.locked && setActiveImage(image)}
+              isActive={activeImage.src === image.src}
+              locked={image.locked}
+            >
               {image.locked ? (
-                <StyledThumb isActive={false} locked>
-                  <div style={{
-                    width: '100%',
-                    height: '100px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    background: '#2B0A3D',
-                    borderRadius: '20px'
-                  }}>
-                    <span style={{ fontSize: 32, color: '#fff' }}>🔒</span>
-                    <span style={{ color: '#fff', marginTop: 8 }}>{image.label}</span>
-                  </div>
-                </StyledThumb>
+                <>
+                  <img
+                    src="src/assets/lock.svg" 
+                    alt="Conteúdo bloqueado"
+                    className="lock-icon"
+                  />
+                </>
               ) : (
-                <StyledThumb
-                  onClick={() => setActiveImage(image)}
-                  isActive={activeImage.src === image.src}
-                >
-                  <img src={image.src} alt={image.alt} />
-                  <span>{image.label}</span>
-                </StyledThumb>
+                <>
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="content-thumb"
+                  />
+                </>
               )}
-            </StyledCardWrapper>
-          ))}
+              <span>{image.label}</span>
+            </StyledThumb>
+          </StyledCardWrapper>
+))}
         </Slider>
       </StyledCardsContainer>
     </>
