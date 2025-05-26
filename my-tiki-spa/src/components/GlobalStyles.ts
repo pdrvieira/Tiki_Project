@@ -23,7 +23,6 @@ const GlobalStyles = createGlobalStyle`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 
     font-size: var(--font-size-body);
     font-weight: var(--font-weight-body);
