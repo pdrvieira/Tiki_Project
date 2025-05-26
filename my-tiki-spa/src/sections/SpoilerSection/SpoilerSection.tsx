@@ -24,14 +24,17 @@ function SpoilerSection() {
         <img src="/src/assets/arrow down.svg" alt="icone amarelo" />
 
         <h2 style={{paddingTop:75.38, paddingBottom:15 }}>VOCÊ JÁ ESTAVA SABENDO?</h2>
+      
+        <Card />
 
-        <Card />  
       </StyledBox>
+
       <StyledImages>
         <img src="/src/assets/tittle2.svg" alt="icone amarelo" />
         <br />
         <img style={{paddingTop:70, paddingBottom:75}}src="/src/assets/icon-yellow.svg" alt="SPOILERS text" />
       </StyledImages>
+      
       <InputField/>
     </>
   );

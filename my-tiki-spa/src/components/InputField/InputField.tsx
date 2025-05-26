@@ -17,10 +17,12 @@ function InputField() {
     }
     setLoading(true);
     setSuccess(false);
-
     setTimeout(() => {
       setLoading(false);
       setSuccess(true);
+      setNome("");
+      setEmail("");
+      setAceito(false);
       setTimeout(() => setSuccess(false), 1800);
     }, 1200);
   };
